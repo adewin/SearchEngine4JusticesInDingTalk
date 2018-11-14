@@ -1,0 +1,137 @@
+<!-- 裁判文书详情页 -->
+<scroll-view class="container">
+  <view class="title">
+    {{docDetail.title}}
+  </view>
+  <view class="content">
+    <view class="box">
+      <view class="borderTitle">
+        <view class="border"></view>
+        <text>基本信息</text>
+      </view>
+      <view class="line">
+        <text class="label">案件类型：</text>
+        <text class="span">{{docDetail.smallClass}}</text>
+      </view>
+      <view class="line">
+        <text class="label">受理时间：</text>
+        <text class="span">{{docDetail.trialDate}}</text>
+      </view>
+      <view class="line">
+        <text class="label">案件编号：</text>
+        <text class="span">{{docDetail.caseId}}</text>
+      </view>
+      <view class="line">
+        <text class="label">审理法院：</text>
+        <text class="span">{{docDetail.courtName}}</text>
+      </view>
+      <view class="line">
+        <text class="label">关键词：</text>
+        <text a:for="{{docDetail.keyword}}" class="keyword">{{item}}</text>
+      </view>
+    </view>
+    <view class="box clearfix">
+      <view class="borderTitle">
+        <view class="border"></view>
+        <text>案件详情</text>
+      </view>
+      <view class="{{caseContentFlag == false?'detail show':'detail'}}">
+        <text a:for="{{docDetail.caseContent}}">{{item}}</text>
+      </view>
+       <button data-val="caseContentFlag" class="fr" type="default" size="mini" onTap="showAll" a:if="{{caseContentFlag == true}}">查看全部</button>
+    </view>
+    <view class="box clearfix">
+      <view class="borderTitle">
+        <view class="border"></view>
+        <text>判决理由</text>
+      </view>
+      <view class="{{trialReasonFlag == false?'detail show':'detail'}}">
+        <text a:for="{{docDetail.trialReason}}">{{item}}</text>
+      </view>
+       <button data-val="trialReasonFlag" class="fr" type="default" size="mini" onTap="showAll" a:if="{{trialReasonFlag == true}}">查看全部</button>
+    </view>
+    <view class="box clearfix">
+      <view class="borderTitle">
+        <view class="border"></view>
+        <text>判决结果</text>
+      </view>
+      <view class="{{trialResultFlag == false?'detail show':'detail'}}">
+        <text a:for="{{docDetail.trialResult}}">{{item}}</text>
+      </view>
+       <button data-val="trialResultFlag" class="fr" type="default" size="mini" onTap="showAll" a:if="{{trialResultFlag == true}}">查看全部</button>
+    </view>
+    <view class="recmd">
+      <view class="iconTitle">
+        <image src="/common/image/law_icon.png" mode="aspectFit" />
+        <view class="span">法律推荐</view>
+      </view>
+      <view class="detail">
+        <view class="{{item.show == true?'law show':'law'}}" a:for="{{lawArr}}">
+          <view class="lawTitle" key="{{item.id}}" data-id="{{item.id}}" onTap="showLaw">
+            <view class="circle"></view>
+            <view class="span">{{item.lawItem}}</view>
+            <image class="img" src="/common/image/bottom.png" mode="aspectFit" />
+          </view>
+          <view class="lawContent">
+            <view a:for="{{item.content}}">{{item}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="recmd">
+      <view class="iconTitle">
+        <image src="/common/image/case_icon.png" mode="aspectFit" />
+        <view class="span">相似案例</view>
+      </view>
+      <view class="detail">
+        <view class="case">
+          <view class="caseTitle" data-ids="{{mediateCase.dissensionId}}" data-types="mediateCase" onTap="goDetail">
+            <view class="mark red">案例</view>
+            <view class="span">{{mediateCase.title}}</view>
+          </view>
+          <view class="caseKey cleafix">
+            <view class="fl" a:for="{{mediateCase.keyword}}">
+              <view class="keyword" >{{item}}</view>
+              <view a:if="{{index!=mediateCase.keyword.length-1}}" class="scircle"></view>
+            </view>
+          </view>
+        </view>
+        <view class="case">
+          <view class="caseTitle" data-ids="{{judgement.caseId}}" data-types="judgement" onTap="goDetail">
+            <view class="mark orange">文书</view>
+            <view class="span">{{judgement.title}}</view>
+          </view>
+          <view class="caseKey cleafix">
+            <view class="fl" a:for="{{judgement.keyword}}">
+              <view class="keyword" >{{item}}</view>
+              <view a:if="{{index!=judgement.keyword.length-1}}" class="scircle"></view>
+            </view>
+          </view>
+        </view>
+        <view class="case">
+          <view class="caseTitle" data-ids="{{protocol.protocolId}}" data-types="protocol" onTap="goDetail">
+            <view class="mark blue">协议</view>
+            <view class="span">{{protocol.title}}</view>
+          </view>
+          <view class="caseKey cleafix">
+            <view class="fl" a:for="{{protocol.keyword}}">
+              <view class="keyword" >{{item}}</view>
+              <view a:if="{{index!=protocol.keyword.length-1}}" class="scircle"></view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="nav">
+    <view class="btn" data-val="Y" onTap="collect">
+      <image src="{{docDetail.likeFlag==0?'/common/image/unlike.png':'/common/image/like.png'}}" mode="widthFix" />
+      <view class="span">推荐</view>
+    </view>
+    <view class="border"></view>
+    <view class="btn" data-val="N" onTap="collect">
+      <image src="{{docDetail.collectFlag==0?'/common/image/uncollect.png':'/common/image/collect.png'}}" mode="widthFix" />
+      <view class="span">收藏</view>
+    </view>
+  </view>
+</scroll-view>

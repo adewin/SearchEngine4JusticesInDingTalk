@@ -1,0 +1,32 @@
+.fr{
+  float:right;
+}
+.fl{
+  float:left;
+}
+.clearfix::after{
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  clear: both;
+}
+.fblue{
+  color: #669AFF;
+}
+.blue{
+  color:#669AFF;
+  background: rgba(102,154,255,0.15);
+}
+.orange{
+  color:#FFBC66;
+  background: rgba(255,188,102,0.15);
+}
+.red{
+  color:#FF8A66;
+  background: rgba(255,138,102,0.15);
+}
+.green{
+  color:#00CE1D;
+  background: rgba(0,186,82,0.15);
+}

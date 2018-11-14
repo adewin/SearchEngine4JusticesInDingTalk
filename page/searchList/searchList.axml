@@ -1,0 +1,40 @@
+<scroll-view class="container" scroll-y={{true}} onScrollToLower="getMore">
+  <view class="searchCtn">
+    <view class="inputCtn">
+      <icon type="search" size="14" color="#808080" />
+      <input class="search" type="text" placeholder="请输入要搜索的内容" value="{{query}}" onConfirm="goSearch" onBlur="changeQuery"/>
+    </view>
+    <text class="searchBtn" onTap="goSearch2">搜索</text>
+  </view>
+  <view class="navCtn">
+    <view class="{{queryType === 'mediateCase'?'nav active':'nav'}}" data-val="mediateCase" onTap="changeTypes">调解案例</view>
+    <view class="{{queryType === 'protocol'?'nav active':'nav'}}" data-val="protocol" onTap="changeTypes">调解协议书</view>
+    <view class="{{queryType === 'judgement'?'nav active':'nav'}}" data-val="judgement" onTap="changeTypes">裁判文书</view>
+    <view class="{{queryType === 'law'?'nav active':'nav'}}" data-val="law" onTap="changeTypes">法律法规</view>
+  </view>
+  <view class="otherInfo">
+    <view class="fl"><text>共{{count}}篇</text></view>
+    <view class="fr">
+      <view class="btn fr" data-val="viewcount" onTap="changeSort"> 
+        <text class="{{sortFlag == 'viewcount'?'active':''}}">按浏览量</text>
+        <image src="{{sortFlag == 'viewcount'?'/common/image/bottom2.png':'/common/image/top2.png'}}" mode="aspectFit" />
+      </view>
+      <view data-val="_score" class="btn fr" onTap="changeSort">
+        <text class="{{sortFlag == '_score'?'active':''}}">按相关度</text>
+        <image src="{{sortFlag == '_score'?'/common/image/bottom2.png':'/common/image/top2.png'}}" mode="aspectFit" />
+      </view>
+    </view>
+  </view>
+  <view class="list" >
+    <view class="once" a:for="{{searchList}}" key="{{item.dissensionId}}" data-ids="{{item.caseId}}" onTap="goDetail">
+      <view class="title">{{item.title}}</view>
+      <view class="content">{{item.content}}</view>
+      <view class="marks">
+        <view class="types">{{item.class}}</view>
+        <view class="looks"><image src="/common/image/looks.png" mode="aspectFit" /><text>{{item.viewcount}}</text></view>
+      </view>
+    </view>
+  </view>
+  <view class="loading" hidden="{{!requestLoading}}">正在载入更多...</view>
+  <view class="loading complete" hidden="{{!requestLoadingComplete}}">已加载全部</view>
+</scroll-view>

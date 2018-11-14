@@ -1,0 +1,3 @@
+<view class="personal" animation="{{animationInfo}}" onTap="changeUrl" onLongTap="forFun">
+  <image src="/common/image/personal.png" mode="aspectFit" />
+</view>

@@ -1,0 +1,19 @@
+{
+  "pages": [
+    "page/index/index",
+    "page/myself/myself",
+    "page/detailCase/detailCase",
+    "page/detailProtocol/detailProtocol",
+    "page/detailDocument/detailDocument",
+    "page/detailLaw/detailLaw",
+    "page/searchList/searchList",
+    "page/search/search",
+    "page/collection/collection"
+  ],
+  "window": {
+    "defaultTitle": "同案同调",
+    "pullRefresh": false,
+    "allowsBounceVertical": "NO"
+  },
+  "debug": true
+}

@@ -1,0 +1,35 @@
+<scroll-view class="container">
+  <view class="header">
+    <image class="back" src="/common/image/indexBack.png" mode="widthFix" />
+    <image class="title" src="/common/image/indexTitle.png" mode="widthFix" />
+    <view class="searchCtn">
+      <icon type="search" size="14" color="#fff" />
+      <view class="input" data-url="/page/search/search" onTap="changeRouter">请输入关键词</view>
+    </view>
+  </view>
+  <view class="navCtn">
+    <view class="{{showWhich ==='hot'?'nav active':'nav'}}" data-which="hot" onTap="changeShow">热门搜索</view>
+    <view class="{{showWhich ==='new'?'nav active':'nav'}}" data-which="new" onTap="changeShow">最新案件</view>
+  </view>
+  <view class="list">
+    <view onTap="goDetail" class="once" a:for="{{showList}}" key="{{item.id}}" data-types="{{item.queryType}}" data-ids="{{item.id}}">
+      <view class="number">{{index+1}}</view>
+      <view class="title">{{item.title}}</view>
+      <view catchTap class="content">{{item.content}}</view>
+      <view catchTap class="marks">
+        <view class="{{item.class}}" >{{item.queryType}}</view>
+        <view class="looks"><image src="/common/image/looks.png" mode="aspectFit" /><text>{{item.viewCount}}</text></view>
+      </view>
+    </view>
+  </view>
+  <view class="navBar">
+    <view class="once active">
+      <image src="/common/image/Home.png" mode="aspectFit" />
+      <text>首页</text>
+    </view>
+    <view class="once" data-url="/page/myself/myself"  onTap="changeRouter">
+      <image src="/common/image/UserProfile.png" mode="aspectFit" />
+      <text>个人中心</text>
+    </view>
+  </view>
+</scroll-view>

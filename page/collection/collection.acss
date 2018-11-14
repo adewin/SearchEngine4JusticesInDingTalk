@@ -1,0 +1,166 @@
+@import '/common/css/common.acss';
+page{
+  border:0;
+  background: "#F7F7F7";
+  height: 100%;
+}
+.container{
+  position: relative;
+  height: 100%;
+}
+.navCtn{
+  display: flex;
+  background: #fff;
+}
+.navCtn>.nav{
+  flex: 1;
+  text-align: center;
+  font-size: 30rpx;
+  color: #474747;
+  line-height: 70rpx;
+  position: relative;
+}
+.navCtn>.active{
+  color:#669AFF;
+}
+.navCtn>.active::after{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width:82rpx;
+  height:5rpx;
+  background:rgba(102,154,255,1);
+  border-radius:3px;
+  transform: translateX(-50%);
+  left: 50%;
+}
+.otherInfo{
+  display: flex;
+  justify-content: space-between;
+  padding:0 20rpx;
+  height: 77rpx;
+  align-items: center;
+}
+.list>.once{
+  background: #fff;
+  width: 710rpx;
+  margin-bottom: 20rpx;
+  position: relative;
+  padding:20rpx;
+  padding-left: 88rpx;
+  transform: translateX(-68rpx)
+}
+.once>.btn{
+  position: absolute;
+  left: 22rpx;
+  top: 50%;
+  transform: translateY(-50%)
+}
+.btn>.checkBox{
+  border-radius: 50%;
+  width:30rpx;
+  height:30rpx;
+  border:3rpx solid #C9C9C9;
+}
+.once>.btn>.active{
+  background: #05C453;
+  border-color:#05C453;
+}
+.once>.btn>.active::after{
+  display: block;
+  content: "\2713";
+  text-align: center;
+  line-height: 30rpx;
+  font-size: 24rpx;
+  color: white;
+}
+.once>.title{
+  font-size: 34rpx;
+  color:#474747;
+  line-height: 46rpx;
+}
+.once>.content{
+  color:#808080;
+  font-size:32rpx;
+  line-height: 44rpx;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  overflow:hidden;
+  /*! autoprefixer: off */
+  -webkit-box-orient: vertical;
+}
+.once>.marks{
+  margin-top: 10rpx;
+  height: 50rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.marks>.types{
+  color:#FFBC66;
+  font-size: 28rpx;
+  background: rgba(255,181,102,0.2);
+  height: 42rpx;
+  padding:0 24rpx 0 8rpx;
+  line-height: 42rpx;
+  position: relative;
+}
+.marks>.types:after{
+  content: '';
+  height:0rpx;
+  width:0;
+  border-right: 8rpx solid white;
+  border-top: 21rpx solid transparent;
+  border-bottom: 21rpx solid transparent;
+  position: absolute;
+  right: 0; 
+  top:0;
+}
+.opration{
+  height: 99rpx;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding:0 21rpx 0 27rpx;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  box-sizing: border-box;
+  background: white;
+  border-top:1rpx solid rgba(197,197,197,1);
+}
+.opration>.opCtn{
+  display: flex;
+  align-items: center;
+}
+.opration>.opCtn>.circle{
+  width:30rpx;
+  height:30rpx;
+  border:3rpx solid rgba(201,201,201,1);
+  border-radius:50%;
+  margin-right: 20rpx;
+}
+.opration>.opCtn>.active{
+  background: #05C453;
+  border-color:#05C453;
+}
+.opration>.opCtn>.active::after{
+  display: block;
+  content: "\2713";
+  text-align: center;
+  line-height: 30rpx;
+  font-size: 24rpx;
+  color: white;
+}
+.opration>.opCtn>.span{
+  font-size: 28rpx;
+  color: #808080;
+  line-height: 34rpx;
+}
+.opration>.btn{
+  background: #FF7575;
+  color: #fff;
+  font-size: 28rpx;
+  padding: 10rpx;
+}

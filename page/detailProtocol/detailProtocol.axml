@@ -1,0 +1,152 @@
+<!-- 协议书详情页 -->
+<scroll-view class="container">
+  <view class="title">
+    {{proDetail.title}}
+  </view>
+  <view class="content">
+    <view class="box">
+      <view class="borderTitle">
+        <view class="border"></view>
+        <text>基本信息</text>
+      </view>
+      <view class="line">
+        <text class="label">案件类型：</text>
+        <text class="span">{{proDetail.smallClass}}</text>
+      </view>
+      <view class="line">
+        <text class="label">调解时间：</text>
+        <text class="span">{{proDetail.dateaccepted}}</text>
+      </view>
+      <view class="line">
+        <text class="label">调解单位：</text>
+        <text class="span"><text>{{proDetail.refereeDept}}</text><image src="/common/image/location.png" mode="scaleToFill" /></text>
+      </view>
+      <view class="line">
+        <text class="label">调解员：</text>
+        <text class="span fblue">{{proDetail.refereeName}}</text>
+      </view>
+      <view class="line">
+        <text class="label">协议金额：</text>
+        <text class="span fblue">{{proDetail.agreementAmount}}</text>
+      </view>
+      <view class="line">
+        <text class="label">关键词：</text>
+        <text a:for="{{proDetail.keyword}}" class="keyword">{{item}}</text>
+      </view>
+    </view>
+    <view class="box clearfix">
+      <view class="borderTitle">
+        <view class="border"></view>
+        <text>纠纷事实</text>
+      </view>
+      <view class="{{dealDisputeFlag == false?'detail show':'detail'}}">
+        <text a:for="{{proDetail.dealDispute}}">{{item}}</text>
+      </view>
+       <button data-val="dealDisputeFlag" class="fr" type="default" size="mini" onTap="showAll" a:if="{{dealDisputeFlag == true}}">查看全部</button>
+    </view>
+    <view class="box clearfix">
+      <view class="borderTitle">
+        <view class="border"></view>
+        <text>申请事项</text>
+      </view>
+      <view class="{{itemsFlag == false?'detail show':'detail'}}">
+        <text a:for="{{proDetail.items}}">{{item}}</text>
+      </view>
+       <button data-val="itemsFlag" class="fr" type="default" size="mini" onTap="showAll" a:if="{{itemsFlag == true}}">查看全部</button>
+    </view>
+    <view class="box clearfix">
+      <view class="borderTitle">
+        <view class="border"></view>
+        <text>协议内容</text>
+      </view>
+      <view class="{{dealAgreementFlag == false?'detail show':'detail'}}">
+        <text a:for="{{proDetail.dealAgreement}}">{{item}}</text>
+      </view>
+       <button data-val="dealAgreementFlag" class="fr" type="default" size="mini" onTap="showAll" a:if="{{dealAgreementFlag == true}}">查看全部</button>
+    </view>
+    <view class="recmd">
+      <view class="iconTitle">
+        <image src="/common/image/law_icon.png" mode="aspectFit" />
+        <view class="span">法律推荐</view>
+      </view>
+      <view class="detail">
+        <view class="{{item.show == true?'law show':'law'}}" a:for="{{lawArr}}">
+          <view class="lawTitle" key="{{item.id}}" data-id="{{item.id}}" onTap="showLaw">
+            <view class="circle"></view>
+            <view class="span">{{item.lawItem}}</view>
+            <image class="img" src="/common/image/bottom.png" mode="aspectFit" />
+          </view>
+          <view class="lawContent">
+            <view a:for="{{item.content}}">{{item}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="recmd">
+      <view class="iconTitle">
+        <image src="/common/image/case_icon.png" mode="aspectFit" />
+        <view class="span">相似案例</view>
+      </view>
+      <view class="detail">
+        <view class="case">
+          <view class="caseTitle" data-ids="{{mediateCase.dissensionId}}" data-types="mediateCase" onTap="goDetail">
+            <view class="mark red">案例</view>
+            <view class="span">{{mediateCase.title}}</view>
+          </view>
+          <view class="caseKey cleafix">
+            <view class="fl" a:for="{{mediateCase.keyword}}">
+              <view class="keyword" >{{item}}</view>
+              <view a:if="{{index!=mediateCase.keyword.length-1}}" class="scircle"></view>
+            </view>
+          </view>
+        </view>
+        <view class="case">
+          <view class="caseTitle" data-ids="{{judgement.caseId}}" data-types="judgement" onTap="goDetail">
+            <view class="mark orange">文书</view>
+            <view class="span">{{judgement.title}}</view>
+          </view>
+          <view class="caseKey cleafix">
+            <view class="fl" a:for="{{judgement.keyword}}">
+              <view class="keyword" >{{item}}</view>
+              <view a:if="{{index!=judgement.keyword.length-1}}" class="scircle"></view>
+            </view>
+          </view>
+        </view>
+        <view class="case">
+          <view class="caseTitle" data-ids="{{protocol.protocolId}}" data-types="protocol" onTap="goDetail">
+            <view class="mark blue">协议</view>
+            <view class="span">{{protocol.title}}</view>
+          </view>
+          <view class="caseKey cleafix">
+            <view class="fl" a:for="{{protocol.keyword}}">
+              <view class="keyword" >{{item}}</view>
+              <view a:if="{{index!=protocol.keyword.length-1}}" class="scircle"></view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="nav">
+    <view class="btn">
+      <image src="/common/image/like.png" mode="widthFix" />
+      <view class="span">推荐</view>
+    </view>
+    <view class="border"></view>
+    <view class="btn">
+      <image src="/common/image/collect.png" mode="widthFix" />
+      <view class="span">收藏</view>
+    </view>
+  </view>
+  <view class="nav">
+    <view class="btn" data-val="Y" onTap="collect">
+      <image src="{{proDetail.likeFlag==0?'/common/image/unlike.png':'/common/image/like.png'}}" mode="widthFix" />
+      <view class="span">推荐</view>
+    </view>
+    <view class="border"></view>
+    <view class="btn" data-val="N" onTap="collect">
+      <image src="{{proDetail.collectFlag==0?'/common/image/uncollect.png':'/common/image/collect.png'}}" mode="widthFix" />
+      <view class="span">收藏</view>
+    </view>
+  </view>
+</scroll-view>

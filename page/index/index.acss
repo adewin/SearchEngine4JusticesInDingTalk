@@ -1,0 +1,180 @@
+@import '/common/css/common.acss';
+page{
+  border:0;
+  background: #fff;
+  height: 100%;
+}
+.container{
+  position: relative;
+  height: 100%;
+}
+.header{
+  position: relative;
+}
+.header>.back{
+  width: 100%;
+}
+.header>.title{
+  width: 314rpx;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 22rpx;
+  z-index: 1;
+}
+.header>.searchCtn{
+  width: 510rpx;
+  height: 58rpx;
+  position: absolute;
+  bottom:100rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #7DAEEE;
+  border-radius: 29rpx;
+  padding:0 20rpx;
+  display: flex;
+  align-items: center;
+}
+.header>.searchCtn>.input{
+  margin-left: 12rpx;
+  font-size:32rpx;
+  height: 48rpx;
+  line-height: 48rpx;
+  padding: 0;
+  width: 455rpx;
+  background: transparent;
+  color:#fff;
+}
+.navCtn{
+  margin: 30rpx 0;
+  height: 50rpx;
+  display: flex;
+  justify-content: center;
+}
+.navCtn>.nav{
+  font-size:30rpx;
+  margin:0 55rpx;
+  color: #474747;
+  position: relative;
+}
+.nav{
+}
+.navCtn>.active{
+  color:#669AFF;
+}
+.navCtn>.active::after{
+  content: '';
+  position: absolute;
+  width:82rpx;
+  height:6rpx;
+  background:rgba(102,154,255,1);
+  border-radius:3rpx;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.list{
+  margin:20rpx 0 120rpx 0;
+  padding:0 20rpx;
+}
+.list>.once{
+  margin-bottom: 25rpx;
+}
+.once>.number{
+  font-size: 26rpx;
+  background: #F7B813;
+  height:36rpx;
+  color: #fff;
+  line-height: 36rpx;
+  padding:0 15rpx;
+  display: inline-block;
+  border-radius: 8rpx;
+}
+.once>.title{
+  font-size:34rpx;
+  color:#474747;
+  line-height: 44rpx;
+  margin-top: 20rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.once>.content{
+  font-size: 32rpx;
+  line-height: 44rpx;
+  color:#808080;
+  text-align: justify;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  overflow:hidden;
+  /*! autoprefixer: off */
+  -webkit-box-orient: vertical;
+}
+.once>.marks{
+  display: flex;
+  margin-top: 20rpx;
+  justify-content: space-between;
+}
+.marks>.looks{
+  color:#B4B4B4;
+  font-size: 28rpx;
+  display: flex;
+  align-items: center;
+}
+.marks>.looks>image{
+  width:38rpx;
+  height: 30rpx;
+}
+.marks>.types{
+  font-size:28rpx;
+  line-height:42rpx;
+  padding:0 12rpx;
+}
+.marks>.blue{
+  color:#669AFF;
+  background: rgba(102,154,255,0.15);
+}
+.marks>.orange{
+  color:#FFBC66;
+  background: rgba(255,188,102,0.15);
+}
+.marks>.red{
+  color:#FF8A66;
+  background: rgba(255,138,102,0.15);
+}
+.marks>.green{
+  color:#00CE1D;
+  background: rgba(0,186,82,0.15);
+}
+.navBar{
+  background: #fff;
+  z-index: 99;
+  width: 100%;
+  height: 100rpx;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  box-shadow:0px -3px 13px 0px rgba(204,204,204,0.75);
+}
+.navBar>.once{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.navBar>.once>image{
+  margin-bottom: 10rpx;
+  width: 50rpx;
+  height: 50rpx;
+}
+.once>text{
+  color: #999999;
+  font-size:23rpx;
+}
+.navBar>.active>text{
+  color: #669AFF;
+}

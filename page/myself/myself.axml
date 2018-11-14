@@ -1,0 +1,40 @@
+<view class="container">
+  <view class="header">
+    <view class="hLeft">
+      <image src="{{personInfo.avatar}}" mode="aspectFill" />
+    </view>
+    <view class="hRight">
+      <view class="line1">{{personInfo.username}}</view>
+      <view class="line2">{{personInfo.mobile}}</view>
+    </view>
+  </view>
+  <view class="list">
+    <view class="opration">
+      <image src="/common/image/icon1.png" mode="aspectFit" />
+      <view class="text">推荐</view>
+      <view class="atRight">{{personInfo.likeCount}}件</view>
+      <view class="border"></view>
+    </view>
+    <view class="opration" data-url="/page/collection/collection" onTap="changeRouter">
+      <image src="/common/image/icon2.png" mode="aspectFit" />
+      <view class="text">我的收藏</view>
+      <view class="border"></view>
+      <image class="icon" src="/common/image/right.png" mode="aspectFit">
+    </view>
+    <view class="opration">
+      <image src="/common/image/icon3.png" mode="aspectFit" />
+      <view class="text">关于我们</view>
+      <image class="icon" src="/common/image/right.png" mode="aspectFit">
+    </view>
+  </view> 
+  <view class="navBar">
+    <view class="once" onTap="goBack">
+      <image src="/common/image/Home2.png" mode="aspectFit" />
+      <text>首页</text>
+    </view>
+    <view class="once active" >
+      <image src="/common/image/UserProfile2.png" mode="aspectFit" />
+      <text>个人中心</text>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,18 @@
+.personal{
+  width:77rpx;
+  height:77rpx;
+  background:rgba(102,154,255,1);
+  box-shadow:0rpx 2rpx 12rpx 4rpx rgba(54,121,253,0.23);
+  border-radius:50%;
+  position: fixed;
+  right: 23rpx;
+  bottom: 118rpx;
+}
+.personal>image{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  width:44rpx;
+  height:58rpx;
+}

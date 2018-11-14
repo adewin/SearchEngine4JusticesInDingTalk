@@ -1,0 +1,48 @@
+<!-- 法律详情页 -->
+<scroll-view class="container" scroll-y="true" scroll-into-view="{{toView}}" style="">
+  <view class="title" onTap="change">
+    {{title}}
+  </view>
+  <view class="content">
+    <view class="box">
+      <view class="borderTitle">
+        <view class="border"></view>
+        <text>基本信息</text>
+      </view>
+      <view class="line">
+        <text class="label">时效性：</text>
+        <text class="span">{{timeLiness}}</text>
+      </view>
+      <view class="line">
+        <text class="label">实行时间：</text>
+        <text class="span">2018-3-10</text>
+      </view>
+      <view class="line">
+        <text class="label">发布机关：</text>
+        <text class="span"><text>{{publisher}}</text><image src="/common/image/location.png" mode="scaleToFill" /></text>
+      </view>
+    </view>
+    <view a:for="{{lawList}}" class="box clearfix">
+      <view class="borderTitle">
+        <view class="border"></view>
+        <text>{{item.name}}</text>
+      </view>
+      <view class="detail">
+        <view a:for="{{item.value}}" id="{{item.id}}">
+          <view a:for="{{item.content}}">{{item}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="nav">
+    <view class="btn" data-val="Y" onTap="collect">
+      <image src="{{likeFlag==0?'/common/image/unlike.png':'/common/image/like.png'}}" mode="widthFix" />
+      <view class="span">推荐</view>
+    </view>
+    <view class="border"></view>
+    <view class="btn" data-val="N" onTap="collect">
+      <image src="{{collectFlag==0?'/common/image/uncollect.png':'/common/image/collect.png'}}" mode="widthFix" />
+      <view class="span">收藏</view>
+    </view>
+  </view>
+</scroll-view>

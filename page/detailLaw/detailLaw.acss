@@ -1,0 +1,114 @@
+@import '/common/css/common.acss';
+page{
+  border:0;
+  background: "#F7F7F7";
+  height: 100%;
+}
+.container{
+  position: relative;
+  min-height: 100%;
+  height:calc(100vh);
+}
+.title{
+  padding:20rpx 20rpx 60rpx 20rpx;
+  font-size:34rpx;
+  color:#474747;
+  line-height: 48rpx;
+  text-align: justify;
+  background: #ffffff;
+}
+.container>.content{
+  min-height: calc(100vh - 256rpx);
+}
+.box{
+  background: #ffffff;
+  margin:20rpx 0;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+}
+.box>.borderTitle{
+  margin:0rpx 20rpx 20rpx 20rpx;
+  font-size: 34rpx;
+  color:#474747;
+  height: 48rpx;
+  display: flex;
+  align-items:center;
+}
+.borderTitle>.border{
+  width:5rpx;
+  background: #669AFF;
+  height: 28rpx;
+  display: inline-block;
+  margin-right: 16rpx;
+}
+.line{
+  margin-left: 41rpx;
+  padding:8rpx 20rpx 8rpx 5em;
+  color:#808080;
+  font-size: 32rpx;
+  line-height: 40rpx;
+  position: relative;
+}
+.line>.label{
+  position: absolute;
+  left: 0rpx;
+  top: 7rpx;
+  display: inline-block;
+  width: 5em;
+}
+.line>.span>image{
+  width: 32rpx;
+  height: 32rpx;
+  display: inline-block;
+  margin-left: 6rpx;
+}
+.box>.detail{
+  padding:0 20rpx;
+  text-align: justify;
+  font-size:32rpx;
+  line-height: 42rpx;
+  overflow: hidden;
+  color:#808080;
+}
+.box>button{
+  margin-right: 20rpx;
+  font-size:26rpx;
+  color:rgba(128,128,128,1);
+  border:1rpx solid rgba(149,149,149,1);
+  border-radius:10rpx;
+  margin-bottom: 0;
+  background: #ffffff;
+}
+.nav{
+  height: 88rpx;
+  width:100%;
+  background:#ffffff;
+  box-shadow:0px 10px 32px 8px rgba(14,14,14,0.15);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nav>.btn{
+  flex: 374;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nav>.border{
+  flex: 2;
+  height: 39rpx;
+  background: #EFF4F7;
+  display: inline-block;
+  float:left;
+}
+.btn>.span{
+ font-weight: 500;
+ margin-left: 15rpx;
+ font-size:34rpx;
+ color:#474747;
+}
+.btn>image{
+  width: 48rpx;
+  height: 45rpx;
+}

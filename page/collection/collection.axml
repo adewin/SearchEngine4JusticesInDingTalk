@@ -1,0 +1,31 @@
+<scroll-view class="container">
+  <view class="navCtn">
+    <view class="{{types=='caseList'?'nav active':'nav'}}" data-val="caseList" onTap="changeTypes">案例({{collectionJson.caseList.length}})</view>
+    <view class="{{types=='judgementList'?'nav active':'nav'}}" data-val="judgementList" onTap="changeTypes">协议({{collectionJson.judgementList.length}})</view>
+    <view class="{{types=='protocolList'?'nav active':'nav'}}" data-val="protocolList" onTap="changeTypes">文书({{collectionJson.protocolList.length}})</view>
+    <view class="{{types=='lawList'?'nav active':'nav'}}" data-val="lawList" onTap="changeTypes">法律({{collectionJson.lawList.length}})</view>
+  </view>
+  <view class="otherInfo">
+    <view class="left">共{{collectionJson[types].length}}条</view>
+    <view class="right" onTap="showOpration">{{flag?'编辑':'完成'}}</view>
+  </view>
+  <view class="list">
+    <view class="once" animation="{{animationInfo}}" a:for="{{collectionArr}}" key="{{item.ajid}}" data-ids="{{item.ajid}}" onTap="goDetail">
+      <view class="btn">
+        <view class="{{item.check==false?'checkBox':'checkBox active'}}" data-id="{{item.ajid}}" data-classId="{{item.classId}}" data-title="{{item.title}}" onTap="check"></view>
+      </view>
+      <view class="title">{{item.title}}</view>
+      <view class="content">{{item.content}}</view>
+      <view class="marks">
+        <view class="types">{{item.class}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="opration" a:if="{{!flag}}">
+    <view class="opCtn" onTap="checkAll">
+      <view class="{{checkallFlag==false?'circle':'circle active'}}"></view>
+      <view class="span">全选</view>
+    </view>
+    <view class="btn" onTap="deleteColct">取消收藏</view>
+  </view>
+</scroll-view>

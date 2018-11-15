@@ -15,7 +15,7 @@
     <view onTap="goDetail" class="once" a:for="{{showList}}" key="{{item.id}}" data-types="{{item.queryType}}" data-ids="{{item.id}}">
       <view class="number">{{index+1}}</view>
       <view class="title">{{item.title}}</view>
-      <view catchTap class="content">{{item.content}}</view>
+      <view class="content">{{item.content}}</view>
       <view catchTap class="marks">
         <view class="{{item.class}}" >{{item.queryType}}</view>
         <view class="looks"><image src="/common/image/looks.png" mode="aspectFit" /><text>{{item.viewCount}}</text></view>

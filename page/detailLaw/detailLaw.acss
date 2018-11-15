@@ -43,18 +43,19 @@ page{
 }
 .line{
   margin-left: 41rpx;
-  padding:8rpx 20rpx 8rpx 5em;
+  padding:8rpx 20rpx 8rpx 200rpx;
   color:#808080;
   font-size: 32rpx;
   line-height: 40rpx;
   position: relative;
+  min-height: 40rpx;
 }
 .line>.label{
   position: absolute;
   left: 0rpx;
   top: 7rpx;
   display: inline-block;
-  width: 5em;
+  width: 200rpx;
 }
 .line>.span>image{
   width: 32rpx;
@@ -69,6 +70,9 @@ page{
   line-height: 42rpx;
   overflow: hidden;
   color:#808080;
+}
+.box>.detail>text{
+  display: block;
 }
 .box>button{
   margin-right: 20rpx;

@@ -66,6 +66,10 @@ Page({
         refereeDept = _this.changeNull(refereeDept)
         refereed = _this.changeNull(refereed)
         keyword = _this.changeLine(keyword)
+        mediateCircs = _this.changeNull(mediateCircs)
+        mediateComment = _this.changeNull(mediateComment)
+        mediateCont = _this.changeNull(mediateCont)
+        mediateExplain = _this.changeNull(mediateExplain)
         if (mediateCircs.length > 99) {
           mediateCircsFlag = true
         }

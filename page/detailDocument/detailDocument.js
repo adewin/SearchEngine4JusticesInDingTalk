@@ -61,6 +61,9 @@ Page({
         // 数据处理
         courtName = _this.changeNull(courtName)
         keyword = _this.changeLine(keyword)
+        caseContent = _this.changeNull(caseContent)
+        trialReason = _this.changeNull(trialReason)
+        trialResult = _this.changeNull(trialResult)
         if (caseContent.length > 99) {
           caseContentFlag = true
         }
@@ -70,9 +73,6 @@ Page({
         if (trialResult.length > 99) {
           trialResultFlag = true
         }
-        caseContent = _this.changeNull(caseContent)
-        trialReason = _this.changeNull(trialReason)
-        trialResult = _this.changeNull(trialResult)
         caseContent = _this.changeEnter(caseContent)
         trialReason = _this.changeEnter(trialReason)
         trialResult = _this.changeEnter(trialResult)

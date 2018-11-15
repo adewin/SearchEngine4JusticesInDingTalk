@@ -64,6 +64,9 @@ Page({
         refereeDept = _this.changeNull(refereeDept)
         refereeName = _this.changeNull(refereeName)
         keyword = _this.changeLine(keyword)
+        dealAgreement = _this.changeNull(dealAgreement)
+        dealDispute = _this.changeNull(dealDispute)
+        items = _this.changeNull(items)
         if (dealAgreement.length > 99) {
           dealAgreementFlag = true
         }
@@ -73,9 +76,6 @@ Page({
         if (items.length > 99) {
           itemsFlag = true
         }
-        dealAgreement = _this.changeNull(dealAgreement)
-        dealDispute = _this.changeNull(dealDispute)
-        items = _this.changeNull(items)
         dealAgreement = _this.changeEnter(dealAgreement)
         dealDispute = _this.changeEnter(dealDispute)
         items = _this.changeEnter(items)

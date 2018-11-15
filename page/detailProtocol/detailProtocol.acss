@@ -40,18 +40,19 @@ page{
 }
 .line{
   margin-left: 41rpx;
-  padding:8rpx 20rpx 8rpx 160rpx;
+  padding:8rpx 20rpx 8rpx 200rpx;
   color:#808080;
   font-size: 32rpx;
   line-height: 40rpx;
   position: relative;
+  min-height: 40rpx;
 }
 .line>.label{
   position: absolute;
   left: 0rpx;
   top: 7rpx;
   display: inline-block;
-  width: 160rpx;
+  width: 200rpx;
 }
 .line>.span{
   display: inline-block;
@@ -80,13 +81,11 @@ page{
   font-size:32rpx;
   line-height: 42rpx;
   max-height: 168rpx;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 4;
   overflow:hidden;
-  /*! autoprefixer: off */
-  -webkit-box-orient: vertical;
   color:#808080;
+}
+.box>.detail>text{
+  display: block;
 }
 .box>button{
   margin-right: 20rpx;

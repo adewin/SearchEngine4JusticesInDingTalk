@@ -16,6 +16,9 @@ Page({
   onLoad(ev){
     let id = ev.id
     let _this = this
+    dd.showLoading({
+      content:'加载中'
+    })
     law(id).then((res)=>{
       console.log(res)
       if(res.data.code === 1){
@@ -30,16 +33,17 @@ Page({
         console.log(lawList)
         _this.setData({
           id:id,
-          title: data.lawName,
-          timeLiness: data.timeLiness,
-          publisher: data.publisher,
-          enforceDate: data.enforceDate,
+          title: _this.changeNull(data.lawName),
+          timeLiness: _this.changeNull(data.timeLiness),
+          publisher: _this.changeNull(data.publisher),
+          enforceDate: _this.changeNull(data.enforceDate),
           toView: id,
           lawList: lawList,
           collectFlag: data.collectFlag,
           likeFlag: data.likeFlag,
           levelEffective: data.levelEffective
         })
+        dd.hideLoading()
       }
     }).catch((err)=>{
       console.log(err)
@@ -80,5 +84,8 @@ Page({
         }
       }
     })
-  }
+  },
+  changeNull(val) {
+    return !val ? '暂无信息' : val
+  },
 })

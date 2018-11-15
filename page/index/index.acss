@@ -105,12 +105,8 @@ page{
   line-height: 44rpx;
   color:#808080;
   text-align: justify;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
   overflow:hidden;
-  /*! autoprefixer: off */
-  -webkit-box-orient: vertical;
+  max-height:88rpx;
 }
 .once>.marks{
   display: flex;
@@ -192,7 +188,7 @@ page{
   width: 480rpx;
   height: 230rpx;
   left: 50%;
-  top: 50%;
+  top: 40%;
   transform: translate(-50%,-50%);
   position: absolute;
 }

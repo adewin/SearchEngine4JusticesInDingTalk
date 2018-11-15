@@ -2,7 +2,10 @@ App({
   onLaunch(options) {
     // E应用初始化，当E应用初始化完成时触发，全局只触发一次
     this.globalData.corpId = options.query.corpId;
-    options.showImage = true
+    dd.setStorageSync({
+      key: 'showImage',
+      data: true
+    })
   },
   onShow() {
     // E应用显示，当E应用启动，或从后台进入前台显示时触发

@@ -22,8 +22,8 @@
   <view class="keywordCtn">
     <view class="title">热门关键词</view>
     <view class="content clearfix">
-      <view data-val="{{item.name}}" onTap="goSearch" class="once" a:for="{{keywordArr}}" key="item.name">
-        <image a:if="item.value===2" src="/common/image/fire.png" mode="aspectFit" />
+      <view a:if="{{index<10}}" data-val="{{item.name}}" onTap="goSearch" class="once" a:for="{{keywordArr}}" key="item.name">
+        <image a:if="{{index<3}}" src="/common/image/fire.png" mode="aspectFit" />
         <text>{{item.name}}</text>
       </view>
     </view>

@@ -40,7 +40,7 @@ page{
 }
 .line{
   margin-left: 41rpx;
-  padding:8rpx 20rpx 8rpx 5em;
+  padding:8rpx 20rpx 8rpx 160rpx;
   color:#808080;
   font-size: 32rpx;
   line-height: 40rpx;
@@ -51,7 +51,7 @@ page{
   left: 0rpx;
   top: 7rpx;
   display: inline-block;
-  width: 5em;
+  width: 160rpx;
 }
 .line>.span{
   display: inline-block;
@@ -91,11 +91,11 @@ page{
   background: #ffffff;
 }
 .box>.show{
-  max-height: 1000rpx;
+  max-height: 10000rpx;
   display: block;
 }
 .nav{
-  position: absolute;
+  position: fixed;
   bottom: 0;
   left: 0;
   height: 88rpx;
@@ -162,7 +162,7 @@ page{
   /* transition: 0.5s linear; */
 }
 .recmd>.detail>.show{
-  max-height: 1800rpx;
+  max-height: 10000rpx;
 }
 .recmd>.detail>.law>.lawContent{
   padding:0 20rpx 20rpx 47rpx;

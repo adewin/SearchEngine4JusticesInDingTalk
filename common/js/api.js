@@ -1,4 +1,4 @@
-let domain = "http://192.168.22.137:8686"
+let domain = "http://47.100.45.156:8686"
 let url = {
   login:'/dingTalk/user/login',
   tipsCN:'/dingTalk/suggest/hanZi',

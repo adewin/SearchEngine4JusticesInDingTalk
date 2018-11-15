@@ -33,7 +33,8 @@ Page({
     hotList:[],
     newList:[],
     showWhich:'hot',
-    showList:[]
+    showList:[],
+    showImg:false
   },
   onLoad(){
     console.log(app)
@@ -41,13 +42,30 @@ Page({
     this.setData({
       corpId: app.globalData.corpId
     })
+    if(dd.getStorageSync({ key: 'showImage' })) {
+      this.setData({
+        showImg:true
+      })
+      dd.setStorageSync({
+        key: 'showImage',
+        data: false
+      })
+      setTimeout(()=>{
+        _this.setData({
+          showImg: false
+        })
+      },3000)
+    }
     this.init()
   },
   init() {
     let _this = this
-    dd.showLoading({
-      content: '加载中'
-    });
+    console.log(this.data.showImg)
+    if(!this.data.showImg){
+      dd.showLoading({
+        content: '加载中'
+      })
+    }
     // 先拿登录凭证
     dd.getAuthCode({
       success: (res) => {
@@ -63,6 +81,7 @@ Page({
                   item.queryType = typeFilter[queryType]
                   item.class = classFilter[queryType]
                   item.content = item.content.split('\\n').join(' ')
+                  item.title = item.title.split('\\n').join(' ')
                   return item
                 })
                 let newList = data.newList.map((item) => {
@@ -70,6 +89,7 @@ Page({
                   item.queryType = typeFilter[queryType]
                   item.class = classFilter[queryType]
                   item.content = item.content.split('\\n').join(' ')
+                  item.title = item.title.split('\\n').join(' ')
                   return item
                 })
                 _this.setData({

@@ -15,7 +15,7 @@
       </view>
       <view class="line">
         <text class="label">实行时间：</text>
-        <text class="span">2018-3-10</text>
+        <text class="span">{{enforceDate}}</text>
       </view>
       <view class="line">
         <text class="label">发布机关：</text>

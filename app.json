@@ -13,7 +13,8 @@
   "window": {
     "defaultTitle": "同案同调",
     "pullRefresh": false,
-    "allowsBounceVertical": "NO"
+    "allowsBounceVertical": "NO",
+    "titleBarColor":"#ffffff"
   },
   "debug": true
 }

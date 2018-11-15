@@ -21,6 +21,9 @@ Page({
   },
   onLoad(){
     let _this = this
+    dd.showLoading({
+      content:'加载中...'
+    })
     collectionList().then((res)=>{
       console.log(res)
       if(res.data.code===1){
@@ -28,18 +31,26 @@ Page({
         // 增加是否选中的条件
         data.caseList.map((item)=>{
           item.check = false
+          item.content = item.content.split('\\n').join(' ')
+          item.title = item.title.split('\\n').join(' ')
           return item
         })
         data.judgementList.map((item) => {
           item.check = false
+          item.content = item.content.split('\\n').join(' ')
+          item.title = item.title.split('\\n').join(' ')
           return item
         })
         data.lawList.map((item) => {
           item.check = false
+          item.content = item.content.split('\\n').join(' ')
+          item.title = item.title.split('\\n').join(' ')
           return item
         })
         data.protocolList.map((item) => {
           item.check = false
+          item.content = item.content.split('\\n').join(' ')
+          item.title = item.title.split('\\n').join(' ')
           return item
         })
         _this.setData({
@@ -57,7 +68,8 @@ Page({
           content: '获取收藏列表失败',
           duration: 3000
         })
-      }    
+      }
+      dd.hideLoading()    
     })
   },
   changeTypes(ev){

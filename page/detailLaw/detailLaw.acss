@@ -87,6 +87,11 @@ page{
   display: flex;
   justify-content: center;
   align-items: center;
+  position: -webkit-sticky; 
+  position: -moz-sticky; 
+  position: -ms-sticky; 
+  position: sticky; 
+  bottom: 0;
 }
 .nav>.btn{
   flex: 374;

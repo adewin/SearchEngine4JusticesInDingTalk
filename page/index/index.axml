@@ -32,4 +32,7 @@
       <text>个人中心</text>
     </view>
   </view>
+  <view a:if="{{showImg}}" class="firstImg">
+    <image src="/common/image/firtsImage.png" mode="aspectFit" />
+  </view>
 </scroll-view>

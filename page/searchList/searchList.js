@@ -30,6 +30,9 @@ Page({
   getList(){
     let _this = this
     return new Promise((resolve,reject)=>{
+      dd.showLoading({
+        content:'加载中'
+      })
       list({
         query: _this.data.query,
         queryType: _this.data.queryType,
@@ -40,6 +43,7 @@ Page({
         let newList = _this.data.searchList.concat(res.data.data.result)
         newList = newList.map((item)=>{
           item.content = item.content.split('\\n').join(' ')
+          item.title = item.title.split('\\n').join(' ')
           return item
         })
         if (res.data.code === 1) {
@@ -48,8 +52,10 @@ Page({
             count:res.data.data.count
           })
         }
+        dd.hideLoading()
         resolve(res)
       }).catch((err) => {
+        dd.hideLoading()
         reject(err)
       })
     })
@@ -133,10 +139,10 @@ Page({
         sortFlag:ev.target.dataset.val,
         requestLoading: false,
         requestLoadingComplete: false,
-        searchList: []
+        searchList: [],
+        currentPage:1
       })
       this.getList()
     }
-    
   }
 })

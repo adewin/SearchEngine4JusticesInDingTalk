@@ -199,9 +199,15 @@ Page({
         })
       }
     })
-    collection(arr).then((res)=>{
-      dd.redirectTo({ url: '/page/collection/collection' });
-    })
+    if(arr.length===0){
+      dd.showToast({
+        content:"你还没有选择，请点击完成返回"
+      })
+    }else{
+      collection(arr).then((res)=>{
+        dd.redirectTo({ url: '/page/collection/collection' });
+      })
+    }
   },
   // 跳转链接
   goDetail(ev) {

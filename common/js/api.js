@@ -1,4 +1,4 @@
-let domain = "http://47.100.45.156:8686"
+let domain = "http://192.168.22.137:8686"
 let url = {
   login:'/dingTalk/user/login',
   tipsCN:'/dingTalk/suggest/hanZi',
@@ -30,6 +30,11 @@ let login = (authCode) => {
       },
       fail: (res) => {  
         reject(res)
+        dd.showToast({
+          type: 'fail',
+          content: '加载失败',
+          duration: 3000
+        })
       }
     })
   })
@@ -48,6 +53,11 @@ let userInfo = () => {
       },
       fail: (res) => {
         reject(res)
+        dd.showToast({
+          type: 'fail',
+          content: '加载失败',
+          duration: 3000
+        })
       }
     })
   })
@@ -64,6 +74,11 @@ let recommend = () => {
       },
       fail: (res) => {
         reject(res)
+        dd.showToast({
+          type: 'fail',
+          content: '加载失败',
+          duration: 3000
+        })
       }
     })
   })
@@ -80,6 +95,11 @@ let searchHotWord = () => {
       },
       fail: (res) => {
         reject(res)
+        dd.showToast({
+          type: 'fail',
+          content: '加载失败',
+          duration: 3000
+        })
       }
     })
   })
@@ -97,6 +117,11 @@ let list = (params) => {
       },
       fail: (res) => {
         reject(res)
+        dd.showToast({
+          type: 'fail',
+          content: '加载失败',
+          duration: 3000
+        })
       }
     })
   })
@@ -116,6 +141,11 @@ let mediateCase = (id) => {
       },
       fail: (res) => {
         reject(res)
+        dd.showToast({
+          type: 'fail',
+          content: '加载失败',
+          duration: 3000
+        })
       }
     })
   })
@@ -135,6 +165,11 @@ let judgement = (id) => {
       },
       fail: (res) => {
         reject(res)
+        dd.showToast({
+          type: 'fail',
+          content: '加载失败',
+          duration: 3000
+        })
       }
     })
   })
@@ -154,6 +189,11 @@ let protocol = (id) => {
       },
       fail: (res) => {
         reject(res)
+        dd.showToast({
+          type: 'fail',
+          content: '加载失败',
+          duration: 3000
+        })
       }
     })
   })
@@ -173,6 +213,11 @@ let law = (id) => {
       },
       fail: (res) => {
         reject(res)
+        dd.showToast({
+          type: 'fail',
+          content: '加载失败',
+          duration: 3000
+        })
       }
     })
   })
@@ -190,6 +235,11 @@ let recommendList = (params) => {
       },
       fail: (res) => {
         reject(res)
+        dd.showToast({
+          type: 'fail',
+          content: '加载失败',
+          duration: 3000
+        })
       }
     })
   })
@@ -209,6 +259,11 @@ let tipsCN = (prefix) => {
       },
       fail: (res) => {
         reject(res)
+        dd.showToast({
+          type: 'fail',
+          content: '加载失败',
+          duration: 3000
+        })
       }
     })
   })
@@ -228,6 +283,11 @@ let tipsEN = (prefix) => {
       },
       fail: (res) => {
         reject(res)
+        dd.showToast({
+          type: 'fail',
+          content: '加载失败',
+          duration: 3000
+        })
       }
     })
   })
@@ -246,6 +306,11 @@ let collection = (params) => {
       },
       fail: (res) => {
         reject(res)
+        dd.showToast({
+          type: 'fail',
+          content: '加载失败',
+          duration: 3000
+        })
       }
     })
   })
@@ -264,6 +329,11 @@ let collectionList = () => {
       },
       fail: (res) => {
         reject(res)
+        dd.showToast({
+          type: 'fail',
+          content: '加载失败',
+          duration: 3000
+        })
       }
     })
   })

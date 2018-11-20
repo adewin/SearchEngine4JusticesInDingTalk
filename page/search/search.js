@@ -9,7 +9,7 @@ Page({
     searchType:'mediateCase',
     searchHistory:[]
   },
-  onLoad(){
+  onShow(){
     // dd.showLoading({
     //   content: '加载中'
     // });
@@ -43,7 +43,14 @@ Page({
     if (ev.target.dataset.val && ev.target.dataset.val!==''){
       // 添加历史记录
       if (hisArr.indexOf(ev.target.dataset.val) === -1) {
-        hisArr.push(ev.target.dataset.val)
+        hisArr.unshift(ev.target.dataset.val)
+        dd.setStorageSync({
+          key: 'search',
+          data: hisArr
+        })
+      } else {
+        hisArr.splice(hisArr.indexOf(ev.target.dataset.val), 1)
+        hisArr.unshift(ev.target.dataset.val)
         dd.setStorageSync({
           key: 'search',
           data: hisArr
@@ -55,7 +62,14 @@ Page({
     }else{
       if (this.data.searchVal!==''){
         if (hisArr.indexOf(this.data.searchVal) === -1) {
-          hisArr.push(this.data.searchVal)
+          hisArr.unshift(this.data.searchVal)
+          dd.setStorageSync({
+            key: 'search',
+            data: hisArr
+          })
+        } else {
+          hisArr.splice(hisArr.indexOf(this.data.searchVal), 1)
+          hisArr.unshift(this.data.searchVal)
           dd.setStorageSync({
             key: 'search',
             data: hisArr

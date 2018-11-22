@@ -201,6 +201,7 @@ Page({
     })
     if(arr.length===0){
       dd.showToast({
+        duration: 3000,
         content:"你还没有选择，请点击完成返回"
       })
     }else{

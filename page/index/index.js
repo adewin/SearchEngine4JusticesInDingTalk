@@ -36,13 +36,13 @@ Page({
     showList:[],
     showImg:false
   },
-  onLoad(){
+  onShow(){
     console.log(app)
     let _this = this;
     this.setData({
       corpId: app.globalData.corpId
     })
-    if(dd.getStorageSync({ key: 'showImage' })) {
+    if(dd.getStorageSync({ key: 'showImage' }).data) {
       this.setData({
         showImg:true
       })
@@ -60,7 +60,6 @@ Page({
   },
   init() {
     let _this = this
-    console.log(this.data.showImg)
     if(!this.data.showImg){
       dd.showLoading({
         content: '加载中'
@@ -103,7 +102,6 @@ Page({
             }).catch((err)=>{
               console.log(err)
               dd.showToast({
-                type: 'fail',
                 content: '系统错误',
                 duration: 3000
               })
@@ -112,7 +110,6 @@ Page({
         }).catch((err) => {
           console.log(err)
           dd.showToast({
-            type: 'fail',
             content: '登录失败',
             duration: 3000
           })

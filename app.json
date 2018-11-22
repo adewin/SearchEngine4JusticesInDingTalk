@@ -11,7 +11,7 @@
     "page/collection/collection"
   ],
   "window": {
-    "defaultTitle": "同案同调",
+    "defaultTitle": "法案智搜",
     "pullRefresh": false,
     "allowsBounceVertical": "NO",
     "titleBarColor":"#ffffff"

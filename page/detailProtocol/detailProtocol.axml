@@ -27,7 +27,7 @@
       </view>
       <view class="line">
         <text class="label">协议金额：</text>
-        <text class="span fblue">{{proDetail.agreementAmount}}</text>
+        <text class="span fblue">{{proDetail.agreementAmount}}元</text>
       </view>
       <view class="line">
         <text class="label">关键词：</text>

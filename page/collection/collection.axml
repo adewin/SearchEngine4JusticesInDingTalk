@@ -7,7 +7,7 @@
   </view>
   <view class="otherInfo">
     <view class="left">共{{collectionJson[types].length}}条</view>
-    <view class="right" onTap="showOpration">{{flag?'编辑':'完成'}}</view>
+    <view a:if="{{!(collectionJson.caseList.length===0&&collectionJson.judgementList.length===0&&collectionJson.protocolList.length===0&&collectionJson.lawList.length===0)}}" class="right" onTap="showOpration">{{flag?'编辑':'完成'}}</view>
   </view>
   <view class="list">
     <view class="once" animation="{{animationInfo}}" a:for="{{collectionArr}}" key="{{item.ajid}}" data-ids="{{item.ajid}}" onTap="goDetail">

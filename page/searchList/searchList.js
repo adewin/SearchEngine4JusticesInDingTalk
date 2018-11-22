@@ -90,6 +90,7 @@ Page({
         currentPage: 1,
         sortFlag: '_score',
         searchList: [],
+        count:0,
         requestLoading: false,
         requestLoadingComplete: false
       })
